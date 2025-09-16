@@ -1,0 +1,38 @@
+Challenge 1 - Diskon Belanja
+Buat fungsi hitung_total() untuk menghitung total harga belanjaan dengan ketentuan:
+Parameter:
+harga → harga barang
+jumlah → jumlah barang
+diskon → opsional, default 0
+Jika diskon > 0, potongan dihitung berdasarkan persen diskon.
+Fungsi mengembalikan total harga setelah diskon.
+
+Challenge 1: Jawaban
+def hitung_total(harga, jumlah, diskon=0):
+ total = harga * jumlah
+ total -= total * (diskon / 100)
+ return total
+harga = int(input("Masukkan harga barang: "))
+jumlah = int(input("Masukkan jumlah barang: "))
+diskon = int(input("Masukkan diskon (%): "))
+print("Total belanja =", hitung_total(harga, jumlah, diskon))
+
+Challenge 2 - Library Konversi Suhu
+Buat library buatan sendiri bernama konversi.py dengan fungsi:
+c_to_f(c) → konversi Celcius ke Fahrenheit
+f_to_c(f) → konversi Fahrenheit ke Celcius
+Lalu buat file main.py untuk mengimpor fungsi dari library tersebut dan menampilkan
+hasil konversi.
+
+Challenge 2: Jawaban
+# File 1: konversi.py (Note: These functions are defined directly in this cell)
+def c_to_f(c):
+    return (c * 9/5) + 32
+def f_to_c(f):
+    return (f - 32) * 5/9
+# File 2: main.py (Note: Calls functions defined in the same cell)
+# import konversi # Removed import statement
+c = float(input("Masukkan suhu Celcius: "))
+print("Suhu dalam Fahrenheit =", c_to_f(c)) # Call function directly
+f = float(input("Masukkan suhu Fahrenheit: "))
+print("Suhu dalam Celcius =", f_to_c(f)) # Call function directly
